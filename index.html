@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 To-Do List</h1>
+            <button id="theme-toggle" class="theme-btn">☀️</button>
+        </header>
+
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Что нужно сделать?" required>
+            <select id="priority-select">
+                <option value="low">Низкий</option>
+                <option value="medium" selected>Средний</option>
+                <option value="high">Высокий</option>
+            </select>
+            <button type="submit" class="add-btn">Добавить</button>
+        </form>
+
+        <div class="task-counts">
+            <span>Всего: <span id="total">0</span></span> |
+            <span>Активные: <span id="active">0</span></span> |
+            <span>Выполненные: <span id="completed">0</span></span>
+        </div>
+
+        <div class="sorters">
+            <button class="sort-btn" data-sort="date">Сортировать по дате</button>
+            <button class="sort-btn" data-sort="priority">Сортировать по приоритету</button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="active">Активные</button>
+            <button class="filter-btn" data-filter="completed">Завершенные</button>
+        </div>
+
+        <ul id="task-list"></ul>
+        <button id="clear-completed" class="clear-btn">Удалить выполненные</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
